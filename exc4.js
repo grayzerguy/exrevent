@@ -13,10 +13,10 @@ const outputText1 = document.querySelector("#output");
 // });
 
 inputText1.addEventListener("keypress", function (event) {
-  array.forEach(element, function (element) {
-    if (event.key === element) {
-      event.preventDefault();
-      outputText1.textContent = `You can't use this character`;
-    }
-  });
+  if (arryOfchars.includes(event.key)) {
+    event.preventDefault();
+    outputText1.textContent = `You can't use this character ${event.key}`;
+  } else {
+    outputText1.textContent = "";
+  }
 });
